@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--不允许用户缩放-->
+    <meta content="telephone=no" name="format-detection">
+    <!--忽略页面中的数字识别为电话号码-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>首页</title>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/TouchSlide.1.1.js"></script>
+</head>
+
+<body>
+    <div class="my_banner_img">
+        <div id="my_slide" class="my_slide">
+            <div class="my_slide-bd">
+                <ul>
+                    <li>
+                        <a class="pic" href="news_detail.html"><img src="images/banner_img.jpg" /></a>
+                    </li>
+                    <li>
+                        <a class="pic" href="news_detail.html"><img src="images/banner_img1.jpg" /></a>
+                    </li>
+                    <li>
+                        <a class="pic" href="news_detail.html"><img src="images/banner_img.jpg" /></a>
+                    </li>
+                    <li>
+                        <a class="pic" href="news_detail.html"><img src="images/banner_img1.jpg" /></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="my_slide-hd">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    TouchSlide({
+        slideCell: "#my_slide",
+        titCell: ".my_slide-hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell: ".my_slide-bd ul",
+        effect: "leftLoop",
+        autoPage: true, //自动分页
+        autoPlay: true //自动播放
+    });
+    </script>
+</body>
+
+</html>

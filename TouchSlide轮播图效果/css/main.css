@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/** 通用 start **/
+*{margin:0;padding:0;}
+html{font-size:62.5%;}
+body, ol,ul,dl,li,dt,dd, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select,div {margin:0;padding:0;}
+html body{font:1.2rem "微软雅黑";margin:0 auto;min-width:320px; background:#f0f0f0;}
+h1,h2{font-weight:normal;}
+img{height: auto;  max-width: 100%;  vertical-align: top;}
+em,i{font-style:normal; margin:0; padding:0;}
+ol,ul,dl,li,dt,dd {list-style:none}
+a{color:#333;text-decoration:none;}
+a:focus{text-decoration:none;}
+.fl{float:left;}.fr{float:right;}.cl{clear:both;}  .over{overflow:hidden;} 
+.fix{*zoom:1;}.fix:after,.fix:before{display:block; content:"clear"; height:0; clear:both; overflow:hidden; visibility:hidden;}.z{*zoom:1;}
+input,botton{outline:none;border:0 none;-webkit-appearance:none;-webkit-tap-highlight-color:#fff;vertical-align:middle;} 
+textarea{resize:none;} 
+.rel{position:relative;}
+.abs{position:absolute;}
+
+/** 通用 end **/
+
+/*banner-tab*/
+.my_slide{position:relative; overflow:hidden; background:#fff;}
+.my_slide .my_slide-hd{bottom:0.8rem; position:absolute; width:100%; z-index: 1; right:-70%;}
+.my_slide .my_slide-hd li{display:inline-block; width:1rem; height:1rem; background:url(../images/icon_dot.png) no-repeat; background-size:1rem 1rem; text-indent:-9999px; overflow:hidden; margin:0 0.5rem;}
+.my_slide .my_slide-hd li.on{background:url(../images/icon_dot_current.png) no-repeat; background-size:1rem 1rem;}
+.my_slide .my_slide-bd{position:relative; z-index:0; width:100%;}
+.my_slide .my_slide-bd li{position:relative; text-align:center; width:100%; height:18rem;}
+.my_slide-bd .pic{
+	height: 100%;
+	display: block;
+}
+.my_banner_img img{
+	height: 100%;
+	width: 100%;
+	display: block;
+}

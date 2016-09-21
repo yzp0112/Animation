@@ -1,0 +1,40 @@
+ /*-moz代表firefox浏览器私有属性 -ms代表IE浏览器私有属性 -webkit代表chrome、safari私有属性*/
+ 
+ * {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .container {
+     width: 600px;
+     height: 150px;
+     margin: 0 auto;
+     background-color: #ccc;
+     display: -moz-box;
+     /* Firefox */
+     display: -ms-flexbox;
+     /* IE10 */
+     display: -webkit-box;
+     /* Safari */
+     display: -webkit-flex;
+     /* Chrome, WebKit */
+     display: flex;
+     -ms-flex-align: center;
+     -webkit-align-items: center;
+     -webkit-box-align: center;
+     align-items: center;
+ }
+ 
+ .container .de1 {
+     width: 100px;
+     height: 100px;
+     margin: 20px;
+     background-color: #fff;
+ }
+ 
+ .container .de2 {
+     width: 200px;
+     height: 70px;
+     margin: 20px;
+     background-color: #fff;
+ }

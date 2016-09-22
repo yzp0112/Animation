@@ -1,0 +1,133 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义alert控件</title>
+    <link rel="stylesheet" href="css/alert.css">
+</head>
+<body>
+<a href="javascript:void(0)" id="btnAlert">弹出Alert</a>
+
+<script src="js/index.js"></script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>弹框</title>
+
+    <style>
+        
+        #sd_overlay {
+            height: 100%;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            display: none;
+        }       
+        .sd_overlayBG {
+            background: #000;
+            opacity: 0.45;
+            filter: alpha(opacity=45);
+            _background: none;
+        }
+        
+        .myweb_msg-cache {
+            width: 50%;
+            height: 200px;
+            border: 1px solid #666;
+            box-shadow: 2px 2px 15px #333;
+            background: #fff;
+            position: fixed;
+            top: 10%;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .myweb_msg-cache h2 {
+            background: #f6f6f6;
+            color: #666;
+            padding: 7px 15px;
+        }
+        
+        .myweb_msg-cache h2 a {
+            margin-top: 3px;
+        }
+        
+        .msg-box-cache {
+            padding: 10px 0;
+        }
+        
+        .msg-box-cache dt {
+            float: left;
+            font-size: 15px;
+            font-weight: bold;
+            width: 100px;
+            text-align: right;
+            line-height: 25px;
+        }
+        
+        .msg-box-cache dd {
+            text-align: left;
+            font-weight: bold;
+            line-height: 25px;
+            width: 300px;
+            float: left;
+        }
+        
+        .msg-box-cache dd select {
+            margin-left: 10px;
+        }
+        
+        .msg-box-cache dd input {
+            vertical-align: middle;
+            margin-left: 10px;
+            margin-right: 5px;
+        }
+        
+        .msg-box-cache dl {
+            clear: both;
+            padding: 10px 15px;
+            border-bottom: 1px solid #f6f6f6;
+            height: 25px;
+        }
+        
+        .cach-btn {
+            text-align: left;
+            margin-top: 10px;
+            padding-left: 120px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="点击我看看，我要弹出来框架" id="myweb-dns-a1" />
+    <div class="sd_overlayBG" id="sd_overlay"></div>
+    <div id="cache-config" class="myweb_msg-cache">
+        <h2><a href="javascript:vold(0)" title="" class="user_msg-closebtn" id="msn-cache-close">关闭</a> 弹框信息</h2>
+        <div class="msg-box-cache">
+            <dl class="clearfix">
+                弹框信息
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script>
+$(function(){    
+    $("#myweb-dns-a1").bind("click",function(){
+        $("#cache-config").show();
+        $("#sd_overlay").show();
+    })
+    $("#msn-cache-close").bind("click",function(){
+        $("#cache-config").hide();
+        $("#sd_overlay").hide();
+    })
+});
+</script>
+
+</body>
+
+</html>

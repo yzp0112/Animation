@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3加载动画</title>
+	<link rel="stylesheet" href="CSS/index.css">
+	<link rel="stylesheet" href="CSS/loaders.css">
+</head>
+<body>
+	<main>
+		<div class="loaders">
+		<div class="loader">
+			<div class="loader-inner ball-pulse">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+	</main>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			document.querySelector('main').className += 'loaded';
+		});
+	</script>
+</body>
+</html>

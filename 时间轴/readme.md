@@ -1,3 +1,3 @@
 ## 简单时间轴
-
- ![image](https://github.com/yzp0112/Animation/raw/master/img.PNG)
+- 效果图
+ ![image](https://github.com/yzp0112/Animation/时间轴/raw/master/img.PNG)

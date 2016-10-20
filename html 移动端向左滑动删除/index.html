@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!--不允许用户缩放-->
+<meta content="telephone=no" name="format-detection">
+<!--忽略页面中的数字识别为电话号码-->
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>收衣地址</title>
+<link href="main.css"  type="text/css" rel="stylesheet">
+<script src="zepto.js"></script>
+<style type="text/css">
+   .my_address_block {float: left;}
+   .my_address_block a {width:12%;}
+   .selected {
+      -webkit-transform: translate(-16%, 0);
+      -webkit-transition: all 0.3s linear;
+    }
+   .address-box {
+      -webkit-transition: all 0.3s linear;
+    }
+</style>
+</head>
+<body>
+<div class="address-warp">
+  <div class="address-box fix">
+    <div class="my_address_block fix">
+      <div class="address_txt fl">
+        <p class="address_info">黄绿&nbsp;&nbsp;女士&nbsp;&nbsp;15100000000</p>
+        <p class="address_location">中国福建省厦门市思明区民族路50号世纪中心大厦</p>
+      </div>
+      <a href="add_address.html" class="fr"><div class="address_edit fr"></div></a>
+    </div>
+    <span class="deletel" value="">删除</span>
+  </div>
+</div>
+<div class="address-warp">
+  <div class="address-box fix">
+    <div class="my_address_block fix">
+      <div class="address_txt fl">
+        <p class="address_info">黄绿&nbsp;&nbsp;女士&nbsp;&nbsp;15100000000</p>
+        <p class="address_location">中国福建省厦门市思明区民族路50号世纪中心大厦</p>
+      </div>
+      <a href="add_address.html" class="fr"><div class="address_edit fr"></div></a>
+    </div>
+    <span class="deletel" value="">删除</span>
+  </div>
+</div>
+<div class="address-warp">
+  <div class="address-box fix">
+    <div class="my_address_block fix">
+      <div class="address_txt fl">
+        <p class="address_info">黄绿&nbsp;&nbsp;女士&nbsp;&nbsp;15100000000</p>
+        <p class="address_location">中国福建省厦门市思明区民族路50号世纪中心大厦</p>
+      </div>
+      <a href="add_address.html" class="fr"><div class="address_edit fr"></div></a>
+    </div>
+    <span class="deletel" value="">删除</span>
+  </div>
+</div>
+ <p class="color_666 tr mr10 f12 lh40">左滑列表可删除消息</p>
+
+ <a href="#"><div class="address_add">+新增地址</div></a>
+<script type="text/javascript">
+  // 左移删除
+      var startPosition, endPosition, deltaX, deltaY, moveLength;
+          $(".my_address_block").on("touchstart", function (e) {
+            var touch = e.touches[0];
+            startPosition = {
+                x: touch.pageX
+            }
+          });
+          $(".my_address_block").on("touchmove",function(e) {
+            var touch = e.touches[0];
+            endPosition = {
+                x: touch.pageX
+            }
+            deltaX = endPosition.x - startPosition.x;
+            if(deltaX < 0) {
+             $(this).parents(".address-box").addClass('selected').parents(".address-warp").siblings().find(".address-box").removeClass('selected');
+            }  else if(deltaX > 0){
+                $(this).parents(".address-warp").find(".address-box").removeClass('selected');
+            } 
+          }) 
+   $(".deletel").click(function() {
+     $(this).parents(".address-warp").hide();
+   })
+</script>
+</body>
+</html>

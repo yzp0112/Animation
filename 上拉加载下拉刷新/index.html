@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>加载与刷新</title>
+	<style>
+		*{margin:0;padding: 0;}
+		ul,li{list-style: none;}
+		#wrapper{width:100%;}
+		.up,.down,li{height:50px;line-height: 50px;text-align: center;}
+		.up{display: none;background-color: darkgrey;color:#fff;border-bottom:1px solid lightgrey;}
+		.down{display: none;background-color:darkgrey;color:#fff;}
+		li:nth-child(n+1){background-color: darkgrey;border-bottom: 1px solid lightgrey;}
+		li:nth-child(2n){background-color:grey;border-bottom: 1px solid lightgrey;}
+		#wrapper{position: relative;height: 500px;background:#aaa;overflow: hidden;}
+		#scroller{position: absolute;left: 0;top: 0;width: 100%;}
+		.iScrollVerticalScrollbar{position: absolute;z-index: 10;width: 5px;top: 0;overflow: hidden;height:100%;border-radius: 10px;}
+		.iScrollIndicator{width: 100%;background-color: orange;border-radius: 10px;height: 30%;}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="scroller">
+			<div class="up" id="up">下拉刷新</div>
+			<ul class="list" id="list">
+				<li>1、这是下拉刷新和上拉加载测试</li>
+			<li>2、这是下拉刷新和上拉加载测试</li>
+			<li>3、这是下拉刷新和上拉加载测试</li>
+			<li>4、这是下拉刷新和上拉加载测试</li>
+			<li>5、这是下拉刷新和上拉加载测试</li>
+			<li>6、这是下拉刷新和上拉加载测试</li>
+			<li>7、这是下拉刷新和上拉加载测试</li>
+			<li>8、这是下拉刷新和上拉加载测试</li>
+			<li>9、这是下拉刷新和上拉加载测试</li>
+			<li>10、这是下拉刷新和上拉加载测试</li>
+			</ul>
+			<div class="down" id="down">上拉加载更多</div>
+		</div>
+	</div>
+	<script src="js/iscroll.js"></script>
+	<script src="js/iscroll-probe.js"></script>
+	<script>
+	  function load() {
+        var myScroll = new IScroll("#wrapper", {
+            useTransition: true,
+            useTransform: true,
+            mouseWheel: true,
+            scrollbars: "custom",//只有该属性的值为"custom"，才能通过.iScrollVerticalScrollbar和.iScrollIndicator设置凹槽和滚动条的样式
+            interactiveScrollbars: true,
+            resizeScrollbars: false,//当这个属性设置为否时,才可以通过.iScrollIndicator改变滚动条(不是凹槽的的宽和高）
+            probeType: 3//这个值设置为3而且必须引入iscroll-probe.js才能触发onscroll事件
+        });
+
+        var down = document.getElementById("down");
+        var up = document.getElementById("up");
+        var scroller = document.getElementById("scroller");
+        var list = document.getElementById("list");
+        var step = 3;//上拉加载时的动态创建的li的个数
+        var max = 20;//li的最大个数
+        var flag = false;//滚动条滚动到最底部的标识
+        var end = false;//数据加载完成后的标识
+
+        myScroll.on("scroll", function () {
+            if (parseInt(this.y) >= 0 && this.directionY == -1) {//down
+                up.style.display = "block";
+                if (parseInt(this.y) == 0) {
+                    up.style.display = "none";
+                    this.refresh();
+                }
+            }
+            if (parseInt(this.y) == this.maxScrollY) {
+                if (end) {
+                    return;
+                }
+                var self = this;
+                setTimeout(function () {
+                    down.style.display = "block";
+                    self.y -= (list.children[0].clientHeight) * step;
+                    self.refresh();
+                    flag = true;
+                    if (list.children.length == max) {
+                        down.innerHTML = "没有更多数据";
+                        flag = false;
+                        setTimeout(function () {
+                            down.style.display = "none";
+                            self.refresh();//为了解决 down.style.display = "none";之后最下面有一行空白；
+                            end = true;
+                        }, 2000)
+                    }
+                }, 1000);
+
+            }
+            if (flag && this.directionY == 1 && this.y < this.maxScrollY) {
+                if (end) {
+                    return;
+                }
+                flag = false;
+                down.style.display = "none";
+                var fragment = document.createDocumentFragment();
+                var len = list.children.length;//每次上拉时动态获取当前li的总个数
+                var num = max - len;//最大个数和总个数的差值
+                step = num <= step && num >= 0 ? num : step;//当两个数的差值大于等于0小于等于step的时候，step等于两者之差，否则step不变
+                for (var i = 0; i < step; i++) {
+                    var li = document.createElement("li");
+                    li.innerHTML = list.children.length +i+ 1 + "这是下拉刷新和上拉加载测试";
+                    fragment.appendChild(li);
+                }
+                list.appendChild(fragment);
+            }
+        });
+    }
+    window.addEventListener("load", load, false);
+	</script>
+</body>
+</html>

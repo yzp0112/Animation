@@ -1,0 +1,65 @@
+@charset "utf-8"
+ul,li,div,img,span,strong{margin:0;padding:0;list-style:none;}
+ul,li{list-style-type: none;}
+body{font-family: Tahoma,Arial;}
+#content{margin:100px auto 0;}
+#content li,#content .wrapper,#content li img,#content li span{
+	width:310px;
+	height:100px;
+}
+#content li{
+	cursor:pointer;
+	-webkit-perspective:4000px;
+	width: 310px;
+	height: 100px;
+	float: left;
+	margin-left: 60px;
+}
+#content .wrapper{
+	position: relative;
+	-webkit-transform-style:preserve-3d;
+	-webkit-transition:-webkit-transform 0.6s;
+}
+#content li img{
+	top: 0;
+	border-radius: 3px;
+	box-shadow: 0px 3px 8px rgba(0,0,0,0.3);
+	position: absolute;
+	-webkit-transform:translateZ(50px);
+	-webkit-transition:all 0.6s;
+}
+#content li span{
+	/*Linear Gradients (线性渐变) 基本语法：background-image:-webkit-gradient(type,x1 y1, x2 y2, from(开始颜色值),to(结束颜色值), [color-stop(偏移量小数,停靠颜色值),...] );*/
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(236,241,244,1)),color-stop(100%,rgba(190,202,217,1)));
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+	position: absolute;
+	-webkit-transform:rotateX(-90deg) translateZ(50px);
+	-webkit-transition:all 0.6s;
+	display: block;
+	top: 0;
+	text-align: left;
+	border-radius: 15px;
+	font-size: 12px;
+	padding: 10px;
+	width: 290px;
+	height: 80px;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+	box-shadow: none;
+}
+#content li span strong{
+	display: block;
+	margin-left: 0.2em 0 0.5em 0;
+	font-size: 20px;
+	font-family: "Oleo Script";
+}
+#content li:hover .wrapper{
+	-webkit-transform:rotateX(95deg);
+}
+#content li:hover img{
+	box-shadow: none;
+	border-radius:15px;
+}
+#content li:hover span{
+	box-shadow: 0px 3px 8px rgba(0,0,0,0.3);
+	border-radius:3px;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "gulpmages",
+  "version": "1.0.0",
+  "description": "图片合并",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yzp",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp.spritesmith": "^6.5.0"
+  }
+}

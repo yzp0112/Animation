@@ -22,6 +22,7 @@
 					<th>序号</th>
 					<th>用户名</th>
 					<th>密码</th>
+					<th>操作</th>
 				</tr>
 			</table>
 		</div>
@@ -34,7 +35,7 @@
 					show()
 					var objs = Text.te;
 					for(var i = 0; i < objs.length; i++) {
-						str += "<tr><td>" + (i + 1) + "</td><td>" + objs[i].name + "</td><td>" + objs[i].pd + "</td></tr>";
+						str += "<tr><td>" + (i + 1) + "</td><td>" + objs[i].name + "</td><td>" + objs[i].pd + "</td><td><button onclick='del_one("+objs[i].name+")'>删除</button></td></tr>";
 					}
 					document.getElementById("table").innerHTML += str;
 				}
@@ -48,6 +49,7 @@
 				}
 			}
 			function add(a, b) { //设置缓存
+				var isSave = false;
 				var Index = table.rows.length;
 				var Text = localStorage.getItem("T");
 				Text = JSON.parse(Text); //将一个 JSON 字符串转换为对象。
@@ -62,7 +64,7 @@
 						}
 					}
 					if(!isSave) {  //如果条件为真，则执行
-						var str = "<tr><td>" + (Index) + "</td><td>" + a + "</td><td>" + b + "</td></tr>";
+						var str = "<tr><td>" + (Index) + "</td><td>" + a + "</td><td>" + b + "</td><td><button onclick='del_one("+a+")'>删除</button></td></tr>";
 						document.getElementById("table").innerHTML += str;
 						objs[objs.length] = {
 							num: Index,
@@ -72,7 +74,7 @@
 					}
 				} else {
 					show()
-					var str = "<tr><td>" + (Index) + "</td><td>" + a + "</td><td>" + b + "</td></tr>";
+					var str = "<tr><td>" + (Index) + "</td><td>" + a + "</td><td>" + b + "</td><td><button onclick='del_one("+a+")'>删除</button></td></tr>";
 					document.getElementById("table").innerHTML += str;
 					var Text = { //要存储的JSON对象
 						te: [{
@@ -94,6 +96,21 @@
 			}
 			function show(){
 				document.getElementById("table-box").style.display ="block";
+			}
+			function del_one(event){
+				var Text = localStorage.getItem("T"); //取回goods变量
+				Text = JSON.parse(Text); //把字符串转换成JSON对象
+				var objs = Text.te;
+				for(var i = 0; i < objs.length; i++) {
+					if(objs[i].name == event) { //说明存在该用户
+						objs.splice(i, 1); //删除元素
+						Text = JSON.stringify(Text); //将JSON对象转化成字符串
+						localStorage.setItem("T", Text); //用localStorage保存转化好的的字符串
+					}
+				}
+				console.log(objs.length)
+				if(objs.length == "0"){localStorage.clear();}
+				window.location.reload();
 			}
 		</script>
 	</body>

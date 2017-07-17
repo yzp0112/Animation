@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			td {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<label for="">用户名：</label><input type="text" id="username" /><br>
+		<label for="">密&emsp;码：</label><input type="password" id="password" /><br>
+		<button id="c" onclick="btn()">保存</button><button onclick="del()">清空用户信息</button>
+		<div id="table-box" style="display: none;">
+			<table border="1" cellpadding="0" cellspacing="0" id="table" width="300" >
+				<caption>用户信息表</caption>
+				<tr>
+					<th>序号</th>
+					<th>用户名</th>
+					<th>密码</th>
+				</tr>
+			</table>
+		</div>
+		<script>
+			window.onload = function() { //读取缓存
+				var str = "";
+				var Text = localStorage.getItem("T");
+				Text = JSON.parse(Text); //把字符串转换成JSON对象
+				if(Text != null) { //localStorage不为空
+					show()
+					var objs = Text.te;
+					for(var i = 0; i < objs.length; i++) {
+						str += "<tr><td>" + (i + 1) + "</td><td>" + objs[i].name + "</td><td>" + objs[i].pd + "</td></tr>";
+					}
+					document.getElementById("table").innerHTML += str;
+				}
+			}
+
+			function btn() { //存入缓存
+				var u = document.getElementById("username").value;
+				var b = document.getElementById("password").value;
+				if(u != '' && b != '') {
+					add(u, b)
+				}
+			}
+			function add(a, b) { //设置缓存
+				var Index = table.rows.length;
+				var Text = localStorage.getItem("T");
+				Text = JSON.parse(Text); //将一个 JSON 字符串转换为对象。
+				if(Text != null && Text != "underfind") {
+					var objs = Text.te;
+					for(var i = 0; i < objs.length; i++) { //遍历缓存
+						isSave = false;
+						if(objs[i].name == a) { //统计缓存中相同数据个数
+							alert("用户名已存在")
+							isSave = true;
+							break;
+						}
+					}
+					if(!isSave) {  //如果条件为真，则执行
+						var str = "<tr><td>" + (Index) + "</td><td>" + a + "</td><td>" + b + "</td></tr>";
+						document.getElementById("table").innerHTML += str;
+						objs[objs.length] = {
+							num: Index,
+							name: a,
+							pd: b
+						};
+					}
+				} else {
+					show()
+					var str = "<tr><td>" + (Index) + "</td><td>" + a + "</td><td>" + b + "</td></tr>";
+					document.getElementById("table").innerHTML += str;
+					var Text = { //要存储的JSON对象
+						te: [{
+							num: Index,
+							name: a,
+							pd: b
+						}]
+					}
+				}
+				Text = JSON.stringify(Text); //将JSON对象转化成字符串
+				localStorage.setItem("T", Text); //用localStorage保存转化好的的字符串
+				document.getElementById("username").value = '';
+				document.getElementById("password").value = '';
+			}
+
+			function del() { //清空缓存
+				localStorage.clear();
+				window.location.reload();
+			}
+			function show(){
+				document.getElementById("table-box").style.display ="block";
+			}
+		</script>
+	</body>
+
+</html>

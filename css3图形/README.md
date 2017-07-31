@@ -3,7 +3,7 @@
 1. 正方形
 <img src="images/1.png" alt="正方形">
 
-```CSS3
+```CSS
 #square{ width: 100px; height: 100px; background:red; }
 ```
 	

@@ -4,6 +4,7 @@
 <img src="images/1.png" alt="正方形">
 
 	```css
+	
 	#square{ width: 100px; height: 100px; background:red; }
 	```
 	
@@ -11,6 +12,7 @@
 <img src="images/2.png" alt="长方形">
 
 	```css
+	
 	#rectangle{ width: 200px; height: 100px; background: red; }
 	```
 	
@@ -18,6 +20,7 @@
 <img src="images/3.png" alt="圆">
 
 	```css
+	
 	#circle {
 	 width: 100px; height: 100px; 
 	 background: red; 
@@ -31,6 +34,7 @@
 <img src="images/4.png" alt="椭圆">
 
 	```css
+	
 	#oval { 
 	width: 200px; height: 100px; 
 	background: red; 
@@ -43,6 +47,7 @@
 <img src="images/5.png" alt="三角形向上">
 
 	```css
+	
 	#triangle-up { 
 	width: 0; height: 0; 
 	border-left: 50px solid transparent; 
@@ -54,6 +59,7 @@
 <img src="images/6.png" alt="三角形向下">
 
 	```css
+	
 	#triangle-down {
 	    width: 0;
 	    height: 0;
@@ -67,6 +73,7 @@
 <img src="images/7.png" alt="三角形向左">
 
 	```css
+	
 	#triangle-left {
 	    width: 0;
 	    height: 0;
@@ -80,6 +87,7 @@
 <img src="images/8.png" alt="三角形向右">
 
 	```css
+	
 	#triangle-right {
 	    width: 0;
 	    height: 0;
@@ -93,6 +101,7 @@
 <img src="images/9.png" alt="三角形（左上角）">
 
 	```css
+	
 	#triangle-topleft { 
 	width: 0; height: 0;
 	 border-top: 100px solid red; 
@@ -104,6 +113,7 @@
 <img src="images/10.png" alt="三角形（右上角）">
 
 	```css
+	
 	#triangle-topright { 
 	width: 0; height: 0; 
 	border-top: 100px solid red; 
@@ -115,6 +125,7 @@
 <img src="images/11.png" alt="三角形（左下角）">
 
 	```css
+	
 	#triangle-bottomleft { 
 	width: 0; height: 0; 
 	border-bottom: 100px solid red; 
@@ -126,6 +137,7 @@
 <img src="images/12.png" alt="三角形（右下角）">
 
 	```css
+	
 	#triangle-bottomright { 
 	width: 0; height: 0; 
 	border-bottom: 100px solid red; 
@@ -137,6 +149,7 @@
 <img src="images/13.png" alt="弯曲的尾巴箭头">
 
 	```css
+	
 	#curvedarrow { 
 	position: relative; width: 0; height: 0; 
 	border-top: 9px solid transparent; 
@@ -164,6 +177,7 @@
 <img src="images/14.png" alt="梯形">
 
 	```css
+	
 	#trapezoid { 
 	border-bottom: 100px solid red; 
 	border-left: 50px solid transparent; 
@@ -176,6 +190,7 @@
 <img src="images/15.png" alt="平行四边形">
 
 	```css
+	
 	#parallelogram { 
 	width: 150px; height: 100px; 
 	-webkit-transform: skew(20deg); 
@@ -190,6 +205,7 @@
 <img src="images/16.png" alt="六角星">
 
 	```css
+	
 	#star-six { 
 	width: 0; height: 0; 
 	border-left: 50px solid transparent; 
@@ -213,6 +229,7 @@
 <img src="images/17.png" alt="五角星">
 
 	```css
+	
 	#star-five { 
 	margin: 50px 0; 
 	position: relative; 
@@ -262,6 +279,7 @@
 <img src="images/18.png" alt="五边形">
 
 	```css
+	
 	#pentagon { 
 	position: relative; 
 	width: 54px; 
@@ -284,6 +302,7 @@
 <img src="images/19.png" alt="六边形">
 
 	```css
+	
 	#hexagon { 
 	width: 100px; height: 55px; 
 	background: red; 
@@ -313,6 +332,7 @@
 <img src="images/20.png" alt="八角形">
 
 	```css
+	
 	#octagon { 
 	width: 100px; height: 100px; 
 	background: red; 
@@ -342,6 +362,7 @@
 <img src="images/21.png" alt="心形">
 
 	```css
+	
 	#heart { 
 	position: relative; 
 	width: 100px; height: 90px; 
@@ -385,6 +406,7 @@
 <img src="images/22.png" alt="无穷">
 
 	```css
+	
 	#infinity { 
 	position: relative; 
 	width: 212px; height: 100px; 
@@ -420,6 +442,7 @@
 <img src="images/23.png" alt="菱形">
 
 	```css
+	
 	#diamond { 
 	width: 0; height: 0; 
 	border: 50px solid transparent; 
@@ -441,6 +464,7 @@
 <img src="images/24.png" alt="盾牌">
 
 	```css
+	
 	#diamond-shield { 
 	width: 0; height: 0; 
 	border: 50px solid transparent; 
@@ -461,6 +485,7 @@
 <img src="images/25.png" alt="菱形">
 
 	```css
+	
 	#diamond-narrow { 
 	width: 0; height: 0; 
 	border: 50px solid transparent; 
@@ -481,6 +506,7 @@
 <img src="images/26.png" alt="cut diamond">
 
 	```css
+	
 	#cut-diamond { 
 	border-style: solid; 
 	border-color: transparent transparent red transparent; 
@@ -504,6 +530,7 @@
 <img src="images/27.png" alt="egg">
 
 	```css
+	
 	#egg { 
 	display:block; 
 	width: 126px; height: 180px; 
@@ -517,6 +544,7 @@
 <img src="images/28.png" alt="pac-man">
 
 	```css
+	
 	#pacman { 
 	width: 0px; height: 0px; 
 	border-right: 60px solid transparent; 
@@ -534,6 +562,7 @@
 <img src="images/29.png" alt="talk bubble">
 
 	```css
+	
 	#talkbubble { 
 	width: 120px; height: 80px; 
 	background: red; 
@@ -558,6 +587,7 @@
 <img src="images/30.png" alt="point burst">
 
 	```css
+	
 	#burst-12 { 
 	background: red; 
 	width: 80px; height: 80px; 
@@ -591,6 +621,7 @@
 <img src="images/31.png" alt="point burst">
 
 	```css
+	
 	#burst-8 { 
 	background: red; 
 	width: 80px; height: 80px; 
@@ -619,6 +650,7 @@
 <img src="images/32.png" alt="yin yang">
 
 	```css
+	
 	#yin-yang { 
 	width: 96px; height: 48px; 
 	background: #eee; 
@@ -652,6 +684,7 @@
 <img src="images/33.png" alt="badge ribbon">
 
 	```css
+	
 	#badge-ribbon { 
 	position: relative; 
 	background: red; 
@@ -686,6 +719,7 @@
 <img src="images/34.png" alt="space invader">
 
 	```css
+	
 	#space-invader{ 
 	box-shadow: 0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em 1em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em 1em 0 0 red, -5em 2em 0 0 red, 5em 2em 0 0 red, -5em 3em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 3em 0 0 red, -2em 4em 0 0 red, -1em 4em 0 0 red, 1em 4em 0 0 red, 2em 4em 0 0 red; 
 	background: red; 
@@ -701,6 +735,7 @@
 <img src="images/35.png" alt="tv screen">
 
 	```css
+	
 	#tv { 
 	position: relative; 
 	left: 10px; 
@@ -726,6 +761,7 @@
 <img src="images/36.png" alt="chevron">
 
 	```css
+	
 	#chevron { 
 	position: relative; 
 	text-align: center; 
@@ -764,6 +800,7 @@
 <img src="images/37.png" alt="moon">
 
 	```css
+	
 	#moon { 
 	width: 80px; height: 80px; 
 	border-radius: 50%; 
@@ -776,6 +813,7 @@
 <img src="images/38.png" alt="flag">
 
 	```css
+	
 	#flag { 
 	width: 110px; height: 56px; 
 	padding-top: 15px; 
@@ -802,6 +840,7 @@
 <img src="images/39.png" alt="cone">
 
 	```css
+	
 	#cone { 
 	width: 0; height: 0; 
 	border-left: 70px solid transparent;
@@ -817,6 +856,7 @@
 <img src="images/40.png" alt="cross">
 
 	```css
+	
 	#cross { 
 	background: red; 
 	height: 100px; 
@@ -839,6 +879,7 @@
 <img src="images/41.png" alt="base">
 
 	```css
+	
 	#base { 
 	background: red; 
 	display: inline-block; 
@@ -863,6 +904,7 @@
 <img src="images/42.png" alt="facebook">
 
 	```css
+	
 	#facebook { 
 	background: red; 
 	text-indent: -999em; 

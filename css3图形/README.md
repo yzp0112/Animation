@@ -3,11 +3,9 @@
 1. 正方形
 <img src="images/1.png" alt="正方形">
 
-	```CSS3
-	
-		#square{ width: 100px; height: 100px; background:red; }
-	
-	```
+```CSS3
+#square{ width: 100px; height: 100px; background:red; }
+```
 	
 2. 长方形
 <img src="images/2.png" alt="长方形">

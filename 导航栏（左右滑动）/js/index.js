@@ -12,7 +12,7 @@ $(function(){
 			$nav_list_list.eq(0).addClass("nav-detail").siblings().removeClass("nav-detail");
 		}
 	});
-	//点击选项自动左右滑动
+	//点击选项自动左右滑动 
 	var $liW = $nav_list_list.first().width();
 	var $navlist = $(".nav-list").width();
 	var $navfirst = $(".nav-first").width();

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/touchslider.js"></script>
+		<title>手机滑屏tab菜单</title>
+		<style>
+			body,div,ul,li,a{padding: 0;margin: 0;}
+			a{color: #333;text-decoration: none;cursor: pointer;}
+			/*ul,li{list-style-type: none;}*/
+			.find-nav{
+				width: 100%;
+				height: 70px;
+				background-color: #f9f9f9;
+				position: fixed;
+				top: 0;
+				z-index: 99;
+				border-bottom: 1px solid #ddd;
+				display: -moz-box;
+				display: -webkit-box;
+				display: box;
+			}
+			.find-nav-left{
+				height: 70px;
+				position:relative;
+				overflow: hidden;
+				-moz-box-flex: 1;
+				-webkit-box-flex: 1;
+				box-flex:1;
+			}
+			.find-nav-list{
+				position: absolute;
+				left: 0;
+			}
+			.find-nav-list ul{
+				position: relative;
+				white-space: nowrap;
+				font-size: 0;
+			}
+			.find-nav-list ul li{
+				display: inline-block;
+				padding: 0;
+				margin: 0 20px;
+			}
+			.find-nav-list ul li a{
+				display: block;
+				width: 100%;
+				height: 100%;
+				line-height: 68px;
+				font-size: 24px;
+				text-align: center;
+				color: #666;
+			}
+			.active a{
+				color: #48A5F4!important;
+				border-bottom: 2px solid #48A5F4;
+			}
+			.li-list{
+				font-size: 40px;
+				color: #fff;
+				text-align: center;
+				width: 100%;
+				min-height: 200px;
+			}
+			.swipe{padding-top: 70px;}
+		</style>
+	</head>
+	<body>
+		<div class="find-nav">
+			<div class="find-nav-left">
+				<div class="find-nav-list" id="pagenavi1">
+					<ul>
+						<li class="active"><a href="#" >每日更新</a></li>
+		                <li><a href="#">精品首推</a></li>
+		                <li><a href="#">时尚包包</a></li>
+		                <li><a href="#">T恤</a></li>
+		                <li><a href="#">运动品牌</a></li>
+		                <li><a href="#">香水化妆品</a></li>
+		                <li><a href="#">阿迪达斯</a></li>
+		                <li><a href="#">耐克</a></li>
+		                <li><a href="#">范思哲</a></li>
+		                <li><a href="#">古驰</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="slider1" class="swipe">
+			<ul class="box01-list">
+				<li class="li-list" style="background:#db7575">1</li>
+				<li class="li-list" style="background:#75b140">2</li>
+				<li class="li-list" style="background:#b16b40">3</li>
+				<li class="li-list" style="background:#4053b1">4</li>
+				<li class="li-list" style="background:#b14080">5</li>
+				<li class="li-list" style="background:#4dd1b3">6</li>
+				<li class="li-list" style="background:#bea30e">7</li>
+				<li class="li-list" style="background:#865bb3">8</li>
+				<li class="li-list" style="background:#69b03f">9</li>
+				<li class="li-list" style="background:#c25e28">10</li>
+			</ul>
+	    </div>
+	    <script type="text/javascript">
+	    	$(".find-nav-list").css("left",0);
+	    	$(".find-nav-list li").each(function(){
+	    		$(".find-nav-list li").eq(0).addClass("active").siblings().removeClass("active");
+	    	})
+	    	var nav_w = $(".find-nav-list li").first().width();
+	    	$(".find-nav-list li").on('click',function(){
+	    		nav_w = $(this).width();
+	    		$(this).addClass("active").siblings().removeClass("active");
+	    		var fn_w = ($(".find-nav").width() - nav_w) / 2;
+	    		var fnl_l;
+	    		var fnl_x = parseInt($(this).position().left);
+	    		if(fnl_x <= fn_w){
+	    			fnl_l = 0;
+	    		}else if(fn_w - fnl_x <= flb_w - fl_w){
+	    			fnl_l = flb_w - fl_w;
+	    		}else{
+	    			fnl_l = fn_w - fnl_x;
+	    		}
+	    		$(".find-nav-list").animate({"left":fnl_l},300);
+	    	})
+	    	var fl_w = $(".find-nav-list").width();
+	    	var flb_w = $(".find-nav-left").width();
+	    	$(".find-nav-left").on("touchstart",function(e){
+	    		var touch1 = e.originalEvent.targetTouches[0];
+	    		x1 = touch1.pageX;
+	    		y1 = touch1.pageY;
+	    		ty_left = parseInt($(this).css("left"));
+	    	})
+	    	$(".find-nav-list").on("touchmove",function(e){
+	    		var touch2 = e.originalEvent.targetTouches[0];
+	    		var x2 = touch2.pageX;
+	    		var y2 = touch2.pageY;
+	    		if(ty_left + x2 -x1 >=0){
+	    			$(this).css("left",0);
+	    		}else if(ty_left + x2 -x1 <= flb_w - fl_w){
+	    			$(this).css("left",flb_w);
+	    		}else{
+	    			$("this").css("left",ty_left + x2 - x1);
+	    		}
+	    		if(Math.abs(y2 - y1)>0){
+	    			e.preventDefault();
+	    		}
+	    	})
+	    	
+	    	for( n = 1;n<9;n++){
+	    		var page = 'pagenavi'+n;
+	    		var mslide = 'slider'+n;
+	    		var mtitle = 'emtitle'+n;
+	    		arrdiv = 'arrdiv'+n;
+	    		var as = document.getElementById(page).getElementsByTagName('a');
+	    		var tt = new TouchSlider({
+	    			id:mslide,
+	    			'auto':'-1',
+	    			fx:'ease-out',
+	    			direction:'left',
+	    			speed:600,
+	    			timeout:5000,
+	    			'before':function(index){
+	    				//var as = $("a")
+	    				as[this.p].className = '';
+	    				this.p = index;
+	    				fnl_x = parseInt($(".find-nav-list li").eq(this.p).position().left);
+	    				nav_w = $(".find-nav-list li").eq(this.p).width();
+	    				$(".find-nav-list li").eq(this.p).addClass("active").siblings().removeClass("active");
+	    				var fn_w = ($(".find-nav").width() - nav_w) / 2;
+	    				var fnl_l;
+	    				if(fnl_x <= fn_w){
+	    					fnl_l = 0;
+	    				}else if(fn_w - fnl_x <= flb_w - fl_w){
+	    					fnl_l = flb_w - fl_w;
+	    				}else{
+	    					fnl_l = fn_w - fnl_x;
+	    				}
+	    				$(".find-nav-list").animate({
+	    					"left":fnl_l
+	    				},300)
+	    			}
+	    		});
+	    		tt.page = page;
+	    		tt.p = 0;
+	    		for(var i = 0;i<as.length;i++){
+	    			(function(){
+	    				var j = i;
+	    				as[j].tt = tt;
+	    				as[j].onclick = function(){
+	    					this.tt.slide(j);
+	    					return false;
+	    				}
+	    			})();
+	    		}
+	    	}
+	    </script>
+	</body>
+</html>

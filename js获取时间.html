@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table th {
+				min-width: 40px;
+				height: 30px;
+			}			
+			table td {
+				text-align: center;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body onload="jsTime()">
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th>代码</th>
+				<th>年</th>
+				<th>月</th>
+				<th>日</th>
+				<th>星期</th>
+				<th>时</th>
+				<th>分</th>
+				<th>秒</th>
+				<th>毫秒</th>
+				<th>备注</th>
+			</tr>
+			<tr>
+				<td>getYear()</td>
+				<td id="d1"></td>
+				<td colspan="8">当前年份&emsp;-&emsp;1900</td>
+			</tr>
+			<tr>
+				<td>getFullYear()</td>
+				<td id="d2"></td>
+				<td colspan="8">完整年份</td>
+			</tr>
+			<tr>
+				<td>getMonth()</td>
+				<td>/</td>
+				<td id="d3"></td>
+				<td colspan="7">获取当前月份【0-11】，0代表1月</td>
+			</tr>
+			<tr>
+				<td>getDate()</td>
+				<td colspan="2">/</td>
+				<td id="d4"></td>
+				<td colspan="6">获取当前日(1-31)</td>
+			</tr>
+			<tr>
+				<td>getDay()</td>
+				<td colspan="3">/</td>
+				<td id="d5"></td>
+				<td colspan="5">获取星期</td>
+			</tr>
+			<tr>
+				<td>getHours()</td>
+				<td colspan="4">/</td>
+				<td id="d6"></td>
+				<td colspan="4">获取当前小时</td>
+			</tr>
+			<tr>
+				<td>getMinutes()</td>
+				<td colspan="5">/</td>
+				<td id="d7"></td>
+				<td colspan="3">获取当前分钟</td>
+			</tr>
+			<tr>
+				<td>getSeconds()</td>
+				<td colspan="6">/</td>
+				<td id="d8"></td>
+				<td colspan="2">获取当前秒</td>
+			</tr>
+			<tr>
+				<td>getMilliseconds()</td>
+				<td colspan="7">/</td>
+				<td id="d9"></td>
+				<td>获取当前毫秒(0-999)</td>
+			</tr>
+			<tr>
+				<td>toLocaleDateString()</td>
+				<td colspan="8" id="d11-1"></td>
+				<td rowspan="2">获取当前日期</td>
+			</tr>
+			<tr>
+				<td>toDateString()</td>
+				<td colspan="8" id="d11-2"></td>
+			</tr>
+			<tr>
+				<td>toLocaleTimeString()</td>
+				<td colspan="8" id="d12"></td>
+				<td rowspan="2">获取当前时间</td>
+			</tr>
+			<tr>
+				<td>toTimeString()</td>
+				<td colspan="8" id="d12-2"></td>
+			</tr>
+			<tr>
+				<td>toLocaleString()</td>
+				<td colspan="8" id="d13"></td>
+				<td>获取当前日期与时间</td>
+			</tr>
+			<tr>
+				<td>date = new Date(date);</br>date.setDate(date.getDate()+7);</br>date.toLocaleString()</td>
+				<td colspan="8" id="d14"></td>
+				<td>一周以后</td>
+			</tr>
+			<tr>
+				<td>getTime()</td>
+				<td colspan="8" id="d10"></td>
+				<td>获取当前时间(从1970.1.1开始的毫秒数)</td>
+			</tr>
+			<tr>
+				<td>date = new Date(date);</br>date.setDate(date.getDate()+7);</br>var timestamp=date.getTime();</td>
+				<td colspan="8" id="d15"></td>
+				<td>一周以后时间戳</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			function jsTime(){
+				var date = new Date();
+				document.getElementById("d1").innerText = date.getYear();
+				document.getElementById("d2").innerText = date.getFullYear();
+				document.getElementById("d3").innerText = date.getMonth() + 1;
+				document.getElementById("d4").innerText = date.getDate();
+				document.getElementById("d5").innerText = date.getDay();
+				document.getElementById("d6").innerText = date.getHours();
+				document.getElementById("d7").innerText = date.getMinutes();
+				document.getElementById("d8").innerText = date.getSeconds();
+				document.getElementById("d9").innerText = date.getMilliseconds();
+				document.getElementById("d10").innerText = date.getTime();
+				document.getElementById("d11-1").innerText = date.toLocaleDateString();
+				document.getElementById("d11-2").innerText = date.toDateString();
+				document.getElementById("d12").innerText = date.toLocaleTimeString();
+				document.getElementById("d12-2").innerText = date.toTimeString();
+				document.getElementById("d13").innerText = date.toLocaleString();
+				date = new Date(date);
+				date.setDate(date.getDate()+7);
+				var timestamp=date.getTime();
+				document.getElementById("d15").innerText =timestamp;
+				document.getElementById("d14").innerText =date.toLocaleString();
+				setTimeout("jsTime();",1000)
+			}
+		</script>
+	</body>
+</html>

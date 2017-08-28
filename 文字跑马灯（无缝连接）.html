@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{overflow: hidden;white-space: nowrap;}
+		</style>
+	</head>
+	<body>
+		<p id="test">跑马灯效果测试灯效果测试灯效果测试试灯效果测试灯效果测试试灯效果测试灯效果测试&emsp;</p>
+		<p id="test2">单个文字测试，单个文字测试，单个文字测试</p>
+		<script type="text/javascript">
+			
+			//文字滚动
+			setInterval(function(){
+				var msg1 = document.getElementById('test');
+				var str1 = msg1.innerHTML;
+				msg1.innerHTML = str1.substr(1)+str1[0]; //从下标为1开始截取字符串，并拼接第一个字符
+			},500);
+			
+			//单个文字
+			var str1 = document.getElementById('test2').innerText;
+			var i = 0;
+			setInterval(function(){
+				if(i>=str1.length){
+					i=0;
+				};
+				document.getElementById('test2').innerHTML = show(i,str1);
+				i++;
+			},500);
+			function show(i,str){
+				var test = str.substr(0,i);
+				test += '<font color="#f00" size="7">'+str[i]+'</font>';
+				test += str.substr(i + 1);
+				return test;
+			}
+		</script>
+	</body>
+</html>

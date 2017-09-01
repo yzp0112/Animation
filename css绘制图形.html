@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*效果一*/
+			.lanren{width: 204px;height: 204px;margin: 50px auto;}
+			.lanren div{width: 100px;height: 100px;float: left;background: #000;border: 2px solid red;}
+			.lanren .one{border-radius: 100% 100% 0 100%;border-right: 0;border-bottom: 0;}
+			.lanren .two{border-radius: 100% 100% 100% 0;border-left: 0;border-bottom: 0;}
+			.lanren .three{border-radius: 100% 0 100% 100%;border-top: 0;border-right: 0;}
+			.lanren .four{border-radius: 0 100% 100% 100%;border-left: 0;border-top: 0;}
+			/*效果二*/
+			.lanren2{width: 200px;height: 200px;margin: 50px auto;}
+			.lanren2 div{width: 100px;height: 100px;background-color: #ccc;float: left;}
+			.lanren2 .one,.lanren2 .four{border-radius: 0 100% 0 100%;}
+			.lanren2 .two,.lanren2 .three{border-radius: 100% 0 100% 0;}
+		</style>
+	</head>
+	<body>
+		<!--效果一-->
+		<div class="lanren">
+			<div class="one"></div>
+			<div class="two"></div>
+			<div class="three"></div>
+			<div class="four"></div>
+		</div>
+		<!--效果二-->
+		<div class="lanren2">
+			<div class="one"></div>
+			<div class="two"></div>
+			<div class="three"></div>
+			<div class="four"></div>
+		</div>
+	</body>
+</html>

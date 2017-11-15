@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{
+    height: 100%;
+    width:100%;
+}
+%fl{
+    float:left;
+}
+%height{
+    height:40px;
+}
+%border{border: 1px solid #ebebeb;}
+
+$bgcolor:#fff;
+%textAlign{
+    text-align: center;
+}
+.main{
+    height: 200px;
+    margin-top: 100px;
+    @extend %textAlign;
+    line-height: 200px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.box{
+    @extend %height,%textAlign;
+    line-height:40px;
+    position: absolute;
+    width: 100%;
+    left: 10%;
+    top: 50%;
+    transform: translate(0%,-50%);
+    button{
+        padding: 0 10px;
+        margin: 0 10px;
+        @extend %height,%fl,%border;
+        cursor: pointer;
+        background-color:$bgcolor;
+    }
+    .first-page,.last-page{margin: 0;}
+    .pageWrap{
+        @extend %height,%fl;
+        overflow: hidden;
+        ul{
+            width: 10000px;
+            @extend %height,%fl;
+            li{
+                width: 60px;
+                @extend %height,%fl,%border;
+                line-height: 40px;
+                box-sizing: border-box;
+                cursor:pointer;
+            }
+            .sel-page{background-color: yellow;}
+        }
+    }
+    .jump-text{
+        width: 60px;
+        @extend %height,%textAlign,%fl;
+        box-sizing: border-box;
+        margin: 0 5px;
+    }
+    .jump-button{
+        margin: 0;
+        @extend %fl;
+    }
+    .total-pages,.total-count{
+        margin-left:10px;
+        @extend %fl;
+        font-size:14px;
+    }
+}

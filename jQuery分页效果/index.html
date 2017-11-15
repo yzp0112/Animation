@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div class="main"></div>
+		<div class="box" id="box"></div>
+		<script type="text/javascript">
+			var setTotalCount = 30;
+			$("#box").paging({
+				initPageNo:1, //初始页码
+				totalPages:2, //总页数
+				totalCount:'合计'+setTotalCount+'条数据', //条目总数
+				slideSpeed:600, //缓动速度，ms
+				jump:true, //是否支持跳转
+				callback:function(page){  //回调函数
+					$(".main").html("<p>这是第"+page+"页</P>");
+					var r = parseInt(Math.random()*255);
+					var g = parseInt(Math.random()*255);
+					var b = parseInt(Math.random()*255);
+					var a = Math.random();
+					var rgba = "rgba("+r+","+g+","+b+","+a+")";
+					$(".main").css("background-color",rgba);
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="../../jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<title></title>
+	</head>
+	<body>
+		<div class="top-record">
+			<div class="record-top"><p>中奖名单</p></div>
+			<div class="toprex-list">
+				<dl>
+					<dd class="dd1">编号</dd>
+					<dd class="dd2">姓名</dd>
+					<dd class="dd3">奖项</dd>
+					<dd class="dd4">时间</dd>
+				</dl>
+				<div class="maquee">
+					<ul>
+						<li>
+							<div class="div1">1</div>
+							<div class="div2">王**</div>
+							<div class="div3">中了30元</div>
+							<div class="div4">2017/11/20 15:10</div>
+						</li>
+						<li>
+							<div class="div1">2</div>
+							<div class="div2">王**</div>
+							<div class="div3">中了30元</div>
+							<div class="div4">2017/11/20 15:10</div>
+						</li>
+						<li>
+							<div class="div1">3</div>
+							<div class="div2">王**</div>
+							<div class="div3">中了30元</div>
+							<div class="div4">2017/11/20 15:10</div>
+						</li>
+						<li>
+							<div class="div1">4</div>
+							<div class="div2">王**</div>
+							<div class="div3">中了30元</div>
+							<div class="div4">2017/11/20 15:10</div>
+						</li>
+						<li>
+							<div class="div1">5</div>
+							<div class="div2">王**</div>
+							<div class="div3">中了30元</div>
+							<div class="div4">2017/11/20 15:10</div>
+						</li>
+						<li>
+							<div class="div1">6</div>
+							<div class="div2">王**</div>
+							<div class="div3">中了30元</div>
+							<div class="div4">2017/11/20 15:10</div>
+						</li>
+						<li>
+							<div class="div1">7</div>
+							<div class="div2">王**</div>
+							<div class="div3">中了30元</div>
+							<div class="div4">2017/11/20 15:10</div>
+						</li>
+						<li>
+							<div class="div1">8</div>
+							<div class="div2">王**</div>
+							<div class="div3">中了30元</div>
+							<div class="div4">2017/11/20 15:10</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="apple">
+			<ul>
+				<li><a href="#">0001</a></li>
+				<li><a href="#">0002</a></li>
+				<li><a href="#">0003</a></li>
+				<li><a href="#">0004</a></li>
+				<li><a href="#">0005</a></li>
+				<li><a href="#">0006</a></li>
+				<li><a href="#">0007</a></li>
+				<li><a href="#">0008</a></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			function autoScroll(obj){
+				$(obj).find('ul').animate({
+					marginTop:"-39px"
+				},500,function(){
+					$(this).css({marginTop:"0"}).find("li:first").appendTo(this);
+				})
+			}
+			$(function(){
+				setInterval("autoScroll('.maquee')",2000);
+				setInterval('autoScroll(".apple")',2000);
+			})
+		</script>
+	</body>
+</html>

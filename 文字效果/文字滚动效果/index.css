@@ -1,0 +1,112 @@
+@charset "UTF-8";
+a, .record-top {
+  color: #fff;
+}
+
+.toprex-list .dd1, .toprex-list .dd2, .toprex-list .dd3, .toprex-list .dd4 {
+  height: 40px;
+  line-height: 40px;
+}
+
+.record-top, .apple {
+  width: 90%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.record-top, .toprex-list dd, .toprex-list li {
+  text-align: center;
+}
+
+.toprex-list dd, .toprex-list li div {
+  float: left;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑";
+  -webkit-tap-hightlight-color: rgba(0, 0, 0, 0);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+.record-top {
+  background-image: url(images/record_Bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 30px auto 0;
+}
+
+.toprex-list dl, .maquee {
+  width: 90%;
+  overflow: hidden;
+  margin: 0 auto;
+  color: #7c7c7c;
+}
+
+.toprex-list dd {
+  border-bottom: #000000 px solid #1b96ee;
+  color: #1b96ee;
+}
+.toprex-list .dd1 {
+  width: 17%;
+}
+.toprex-list .dd2 {
+  width: 18%;
+}
+.toprex-list .dd3 {
+  width: 25%;
+}
+.toprex-list .dd4 {
+  width: 40%;
+}
+
+.maquee {
+  height: 195px;
+}
+
+.toprex-list ul {
+  width: 100%;
+  height: 195px;
+}
+.toprex-list li {
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  font-size: 12px;
+  border-bottom: 1px dashed #aaa;
+}
+.toprex-list li .div1 {
+  width: 17%;
+}
+.toprex-list li .div2 {
+  width: 18%;
+}
+.toprex-list li .div3 {
+  width: 25%;
+}
+.toprex-list li .div4 {
+  width: 40%;
+}
+
+.apple {
+  overflow: hidden;
+  margin: 30px auto;
+  border: 1px solid #1b96ee;
+}
+.apple a {
+  width: 100%;
+  text-indent: 20px;
+  color: #1b96ee;
+}
+
+/*# sourceMappingURL=index.css.map */
